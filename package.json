@@ -14,7 +14,8 @@
     "webpack": "webpack --progress --bail",
     "webpack:server": "webpack-dev-server --progress --inline --hot",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=tailwind.webpack.config.js",
-    "heroku-postbuild": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=tailwind.webpack.config.js && webpack --progress --bail"
+    "heroku-postbuild": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=tailwind.webpack.config.js && webpack --progress --bail",
+    "start": "echo 'started'"
   },
   "dependencies": {
     "css-loader": "^0.28.7",
