@@ -1,0 +1,8 @@
+/node_modules/
+/output/
+/generated-docs/
+/static/js/bundle.js
+/static/css/bundle.css
+npm-debug.log
+/dist/
+/static/dist/
