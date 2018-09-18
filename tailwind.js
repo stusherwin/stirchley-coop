@@ -213,6 +213,9 @@ module.exports = {
       'Helvetica Neue',
       'sans-serif',
     ],
+    'sans2': [
+      'Work Sans'
+    ],
     'serif': [
       'Rokkitt',
       'Constantia',
