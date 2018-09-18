@@ -14,5 +14,11 @@
 } */
 
 p {
-  @apply font-sans text-xl leading-normal mt-8;
+  @apply font-sans leading-normal text-sm mt-4 leading-tight;
+}
+
+@screen sm {
+  p {
+    @apply text-xl mt-8 leading-normal;
+  }  
 }
