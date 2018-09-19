@@ -48,6 +48,7 @@ let colors = {
 
   'brand': '#941e2f',
   'brand-light': '#b38785',
+  'brand-lightest': '#efe5e6',
   'brand-transparent': 'rgba(179, 135, 133, 0.7)',
   
   'black': '#22292f',
