@@ -1,14 +1,11 @@
 'use strict';
 
 const path = require('path');
-
 const webpack = require('webpack');
-
 const isWebpackDevServer = process.argv.filter(a => path.basename(a).indexOf('webpack-dev-server') >= 0).length;
-const isWatch = process.argv.filter(a => a === '--watch').length
 
 var plugins =
-  isWebpackDevServer || !isWatch ? [] : [
+  isWebpackDevServer? [] : [
     function(){
       this.plugin('done', function(stats){
         process.stderr.write(stats.toString('errors-only'));
@@ -18,7 +15,7 @@ var plugins =
 ;
 
 module.exports = {
-    entry: "./webpack/index.js",
+    entry: isWebpackDevServer ? "./webpack/web-server-index.js" : "./webpack/index.js",
 
     output: {
         filename: "./dist/app.js",

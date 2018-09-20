@@ -2,12 +2,12 @@
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
-const isWatch = process.argv.filter(a => a === '--watch').length
+const isWatch = !!process.argv.filter(a => a === '--watch').length
 
 module.exports = {
   entry: './webpack/tailwind-index.js',
   output: {
-    path: path.resolve(__dirname, 'static/dist' + (isWatch && '/tailwind')),
+    path: path.resolve(__dirname, 'static/dist' + (isWatch ? '/tailwind' : '')),
     filename: 'styles.css',
   },
   module: {
