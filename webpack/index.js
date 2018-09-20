@@ -1,4 +1,4 @@
-import '../static/dist/styles.css';
+import '../static/dist/tailwind/styles.css';
 
 function showCurrentTab() {
   document.querySelectorAll('.tab-content').forEach(function(e) {

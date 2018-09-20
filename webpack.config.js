@@ -7,8 +7,6 @@ const webpack = require('webpack');
 const isWebpackDevServer = process.argv.filter(a => path.basename(a).indexOf('webpack-dev-server') >= 0).length;
 const isWatch = process.argv.filter(a => a === '--watch').length
 
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 var plugins =
   isWebpackDevServer || !isWatch ? [] : [
     function(){
@@ -19,22 +17,8 @@ var plugins =
   ]
 ;
 
-var lessUse = [];
-if(isWebpackDevServer) {
-  lessUse = [
-    { loader: "style-loader" },
-    { loader: "css-loader" }
-  ];
-} else {
-  plugins.push(new ExtractTextPlugin("./css/bundle.css"));
-  lessUse = ExtractTextPlugin.extract({
-    fallback: "style-loader",
-    use: [ "css-loader" ]
-  })
-}
-
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./webpack/index.js",
 
     output: {
         filename: "./dist/app.js",
@@ -54,7 +38,10 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.css$/, use: lessUse },
+            { test: /\.css$/, use: [
+              { loader: "style-loader" },
+              { loader: "css-loader" }
+            ] },
             { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
         ]
     },
