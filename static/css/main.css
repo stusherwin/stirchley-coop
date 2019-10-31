@@ -13,11 +13,19 @@
   @apply block;
 } */
 
-p, li, blockquote {
-  @apply font-sans text-sm leading-tight tracking-wide;
+p, li, blockquote, td, th {
+  @apply font-sans text-sm leading-tight tracking-normal;
 }
 
-p, blockquote {
+th, td {
+  @apply text-left pr-8 align-top;
+}
+
+th {
+  @apply whitespace-no-wrap;
+}
+
+p, blockquote, table, ul {
   @apply mt-4;
 }
 
@@ -45,6 +53,14 @@ blockquote {
   @apply font-normal text-base mt-4;
 }
 
+.tab-content h4 {
+  @apply font-normal text-sm mt-4;
+}
+
+.tab-content h5 {
+  @apply font-normal text-sm mt-4;
+}
+
 .tab-content img {
   @apply w-full mt-4;
 }
@@ -53,12 +69,20 @@ blockquote {
   @apply mt-4;
 }
 
-.tab-content h2 + p {
+.tab-content h2 + p, .tab-content h2 + ul {
   @apply mt-2;
 }
 
-.tab-content h3 + p {
+.tab-content h3 + p, .tab-content h3 + ul {
   @apply mt-1;
+}
+
+.tab-content h4 + p, .tab-content h4 + ul {
+  @apply mt-0;
+}
+
+.tab-content h5 + p, .tab-content h5 + ul {
+  @apply mt-0;
 }
 
 i {
@@ -67,11 +91,11 @@ i {
 }
 
 @screen sm {
-  p, li, blockquote {
+  p, li, blockquote, td, th {
     @apply text-xl;
   }
 
-  p, blockquote {
+  p, blockquote, table, ul {
     @apply mt-8;
   }
 
@@ -93,6 +117,14 @@ i {
 
   .tab-content h3 {
     @apply mt-8 text-2xl font-normal;
+  }
+
+  .tab-content h4 {
+    @apply mt-8 text-xl font-normal;
+  }
+
+  .tab-content h5 {
+    @apply mt-8 text-xl font-normal;
   }
 
   .tab-content img {
@@ -117,7 +149,7 @@ i {
     @apply pl-10;
   }
 
-  blockquote {
+  blockquote {  
     @apply py-4 px-8;
   }
 }
@@ -133,9 +165,17 @@ i {
 
   .tab-content h2 {
     @apply mt-8;
-  }  
+  }
 
   .tab-content h3 {
+    @apply mt-8;
+  }
+
+  .tab-content h4 {
+    @apply mt-8;
+  }
+
+  .tab-content h5 {
     @apply mt-8;
   }
 
@@ -144,6 +184,14 @@ i {
   }
 
   .tab-content h3 + p {
+    @apply mt-2;
+  }
+
+  .tab-content h4 + p {
+    @apply mt-2;
+  }
+
+  .tab-content h5 + p {
     @apply mt-2;
   }
 
