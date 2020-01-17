@@ -6,7 +6,7 @@ function showCurrentTab() {
     })
   })
 
-  var elem = document.getElementById(location.hash.substr(1) || 'about');
+  var elem = document.getElementById(location.hash.substr(1) || 'faq');
   elem.style.display = 'block';
   document.querySelectorAll('[data-href="' + elem.id + '"]').forEach(function(link) {
     link.classList.add('font-normal', 'pointer-events-none', 'cursor-default');

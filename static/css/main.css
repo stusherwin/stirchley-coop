@@ -61,7 +61,7 @@ blockquote {
   @apply font-normal text-sm mt-4;
 }
 
-.tab-content img {
+.tab-content img.main {
   @apply w-full mt-4;
 }
 
@@ -127,7 +127,7 @@ i {
     @apply mt-8 text-xl font-normal;
   }
 
-  .tab-content img {
+  .tab-content img.main {
      @apply mt-8;
   }
 
@@ -195,7 +195,7 @@ i {
     @apply mt-2;
   }
 
-  .tab-content img {
+  .tab-content img.main {
     @apply mt-8;
   }
 
